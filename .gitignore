@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store
+.venv/
+.sync.lock
+
+# 运行时数据与缓存（由每日同步生成，不入库）
+data/
+public/details/
+public/translations/
+public/snapshot.js
+
+# 本地账号库与凭据
+accounts.sqlite3
+*.sqlite3
+*.env
+server.env

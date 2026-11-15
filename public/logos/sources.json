@@ -1,0 +1,241 @@
+{
+  "microsoft": {
+    "file": "microsoft.png",
+    "sourcePage": "https://www.microsoft.com/",
+    "assetUrl": "https://www.microsoft.com/favicon.ico?v2",
+    "processing": "Official favicon, largest embedded size losslessly converted to PNG; no crop or recoloring",
+    "checkedAt": "2026-09-29"
+  },
+  "amazon": {
+    "file": "amazon.png",
+    "sourcePage": "https://www.amazon.jobs/en/",
+    "assetUrl": "https://static.amazon.jobs/assets/favicon-933ee4605ae64f3181e0fcd88f9205be7b5f8a15643c342e53a9f03bb673732c.ico",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      48,
+      48
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "goldman": {
+    "file": "goldman.svg",
+    "sourcePage": "https://www.goldmansachs.com/",
+    "assetUrl": "https://cdn.gs.com/images/goldman-sachs/v2/gs-favicon.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-09-29"
+  },
+  "walmart": {
+    "file": "walmart.svg",
+    "sourcePage": "https://corporate.walmart.com/",
+    "assetUrl": "https://corporate.walmart.com/content/dam/corporate/site-images/WMT-Spark-New-SparkYellow-RGB.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-09-29"
+  },
+  "tencent": {
+    "file": "tencent.png",
+    "sourcePage": "https://www.tencent.com/zh-cn/",
+    "assetUrl": "https://www.tencent.com/wp-content/themes/tencent-web/assets/favicon/apple-touch-icon.png",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      180,
+      180
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "alibaba": {
+    "file": "alibaba.png",
+    "sourcePage": "https://www.alibabagroup.com/",
+    "assetUrl": "https://static.alibabagroup.com/static/favicon.ico",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      32,
+      32
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "google": {
+    "file": "google.png",
+    "sourcePage": "https://www.google.com/",
+    "assetUrl": "https://www.google.com/favicon.ico",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      32,
+      32
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "cisco": {
+    "file": "cisco.png",
+    "sourcePage": "https://careers.cisco.com/global/en",
+    "assetUrl": "https://cdn.phenompeople.com/CareerConnectResources/CISCISGLOBAL/images/ciscologo_new-1754584302586.png",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      200,
+      100
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "meta": {
+    "file": "meta.svg",
+    "sourcePage": "https://www.meta.com/en-gb/about/",
+    "assetUrl": "https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-09-29"
+  },
+  "airwallex": {
+    "file": "airwallex.png",
+    "sourcePage": "https://www.airwallex.com/en-sg",
+    "assetUrl": "https://grw-landing.airwallex.com/favicon.ico",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      48,
+      48
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "shopee": {
+    "file": "shopee.png",
+    "sourcePage": "https://careers.shopee.sg/",
+    "assetUrl": "https://deo.shopeemobile.com/shopee/shopee-careers-live-sg/favicon.ico",
+    "processing": "Lossless PNG conversion from official image/icon; no recoloring",
+    "size": [
+      32,
+      32
+    ],
+    "checkedAt": "2026-09-29"
+  },
+  "nvidia": {
+    "file": "nvidia-symbol.svg",
+    "sourcePage": "https://www.nvidia.com/en-sg/",
+    "assetUrl": null,
+    "processing": "Official green eye symbol path extracted from header SVG lockup; original path and fill unchanged; wordmark excluded",
+    "checkedAt": "2026-09-29"
+  },
+  "aws": {
+    "file": "aws.svg",
+    "sourcePage": "https://aws.amazon.com/",
+    "assetUrl": null,
+    "processing": "Official inline header SVG extracted without changing paths or colors",
+    "checkedAt": "2026-09-29"
+  },
+  "bytedance": {
+    "file": "bytedance.png",
+    "sourcePage": "https://www.bytedance.com/",
+    "assetUrl": null,
+    "processing": "Official embedded favicon decoded as PNG",
+    "checkedAt": "2026-09-29"
+  },
+  "apple": {
+    "file": "apple.svg",
+    "sourcePage": "https://www.apple.com/",
+    "assetUrl": null,
+    "processing": "Official navigation SVG; viewBox removes empty navigation padding only; original path unchanged",
+    "checkedAt": "2026-09-29"
+  },
+  "hsbc": {
+    "file": "hsbc.png",
+    "sourcePage": "https://www.hsbc.com/",
+    "assetUrl": "https://www.hsbc.com/apple-touch-icon.png",
+    "processing": "Lossless PNG conversion from official image/icon; no crop or recoloring",
+    "size": [
+      180,
+      180
+    ],
+    "checkedAt": "2026-11-05"
+  },
+  "standardchartered": {
+    "file": "standardchartered.png",
+    "sourcePage": "https://www.sc.com/en/",
+    "assetUrl": "https://www.sc.com/en/content/themes/standard-chartered-corporate-affairs/src/images/site-icons/apple-touch-icon.png",
+    "processing": "Lossless PNG conversion from official image/icon; no crop or recoloring",
+    "size": [
+      180,
+      180
+    ],
+    "checkedAt": "2026-11-05"
+  },
+  "aia": {
+    "file": "aia.svg",
+    "sourcePage": "https://www.aia.com/en.html",
+    "assetUrl": "https://www.aia.com/content/dam/group-wise/images/system/icons/aia-logo-red.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-11-05"
+  },
+  "hkex": {
+    "file": "hkex.png",
+    "sourcePage": "https://www.hkexgroup.com/",
+    "assetUrl": "https://www.hkexgroup.com/assets/images/webclip.png",
+    "processing": "Lossless PNG conversion from official image/icon; no crop or recoloring",
+    "size": [
+      256,
+      256
+    ],
+    "checkedAt": "2026-11-05"
+  },
+  "hkjc": {
+    "file": "hkjc-mark.svg",
+    "sourcePage": "https://corporate.hkjc.com/",
+    "assetUrl": "https://consvc.hkjc.com/-/media/Sites/CorpWebCommon/CorporateSiteStandardizationGlobalMedia/IADataSource/Logo/HKJC-Logo-Desktop_default_svg.svg",
+    "processing": "Official SVG lockup, viewBox cropped to the official roundel emblem (no redraw or recolor); full lockup kept as hkjc.svg",
+    "size": "vector",
+    "checkedAt": "2026-11-06"
+  },
+  "huawei": {
+    "file": "huawei.png",
+    "sourcePage": "https://www.huawei.com/en/",
+    "assetUrl": "https://www.huawei.com/-/media/htemplate-home/1.0.1.20251205144752/components/assets/img/apple-touch-icon-180.png",
+    "processing": "Lossless PNG conversion from official image/icon; no crop or recoloring",
+    "size": [
+      181,
+      181
+    ],
+    "checkedAt": "2026-11-05"
+  },
+  "oracle": {
+    "file": "oracle.png",
+    "sourcePage": "https://www.oracle.com/",
+    "assetUrl": "https://www.oracle.com/asset/web/favicons/favicon-192.png",
+    "processing": "Lossless PNG conversion from official image/icon; no crop or recoloring",
+    "size": [
+      192,
+      192
+    ],
+    "checkedAt": "2026-11-05"
+  },
+  "sap": {
+    "file": "sap.svg",
+    "sourcePage": "https://www.sap.com/",
+    "assetUrl": "https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-11-05"
+  },
+  "salesforce": {
+    "file": "salesforce.svg",
+    "sourcePage": "https://www.salesforce.com/",
+    "assetUrl": "https://c1.sfdcstatic.com/content/dam/sfdc-docs/www/logos/logo-salesforce.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-11-05"
+  },
+  "servicenow": {
+    "file": "servicenow.svg",
+    "sourcePage": "https://careers.servicenow.com/",
+    "assetUrl": "https://careers.servicenow.com/images/footer-logo.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-11-05"
+  },
+  "janestreet": {
+    "file": "janestreet.svg",
+    "sourcePage": "https://www.janestreet.com/",
+    "assetUrl": "https://www.janestreet.com/assets/logo-icon-b8a206838d61e9232dd7d2ae67f12b4f35a494ac9ad0a7e4b1456b482849c977.svg",
+    "processing": "Original SVG",
+    "size": "vector",
+    "checkedAt": "2026-11-08"
+  }
+}

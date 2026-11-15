@@ -1,0 +1,27 @@
+[Unit]
+Description=Southbound recruitment website
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=southbound
+Group=southbound
+WorkingDirectory=/srv/southbound/app
+EnvironmentFile=/etc/southbound/server.env
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 /srv/southbound/app/server.py
+Restart=on-failure
+RestartSec=5
+UMask=0022
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/southbound
+MemoryMax=768M
+TasksMax=128
+
+[Install]
+WantedBy=multi-user.target

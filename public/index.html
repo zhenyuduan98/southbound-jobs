@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="深圳、香港、新加坡、广州，来自企业官网的工作机会。每日更新，技术岗位优先。">
+  <title>南向 · Southbound — 四城工作机会</title>
+  <meta name="theme-color" content="#f8fafd">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2214%22%20fill%3D%22%230b57d0%22%2F%3E%3Cpath%20d%3D%22M28%209H18a6%206%200%200%200%200%2012h4a6%206%200%200%201%200%2012H12%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%229%22%20r%3D%223%22%20fill%3D%22%23a8c7fa%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="styles.css?v=16">
+  <script src="snapshot.js"></script><script src="app.js?v=16" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="top-inner">
+  <a class="brand" href="#jobs" aria-label="南向首页"><span class="brand-icon"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M28 10H18a6 6 0 0 0 0 12h4a6 6 0 0 1 0 12H12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="28" cy="10" r="3" fill="#a8c7fa"/></svg></span><span>南向<span class="brand-en">SOUTHBOUND</span></span></a>
+  <nav aria-label="主导航"><button class="nav active" data-tab="jobs">发现职位</button><button class="nav" data-tab="companies">公司目录</button><button class="nav" data-tab="saved">我的收藏 <span id="saved-count">0</span></button></nav>
+  <button id="refresh" class="refresh" aria-label="更新职位"><svg class="ui-icon refresh-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.4 6.6M20 4v7h-7"/></svg> 更新职位</button>
+  <div class="account"><a id="login-link" class="account-login" href="/auth/google/start" hidden><svg class="google-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.2 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.4c-.5 2.9-2.2 5.3-4.7 7l7.6 5.9c4.4-4.1 6.8-10.1 6.8-17.4z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.8 2.3-8.3 2.3-6.3 0-11.7-3.7-13.6-9.8l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg><span>登录</span></a><div id="account-user" class="account-user" hidden><button id="account-button" class="account-button" aria-haspopup="true" aria-expanded="false" aria-label="账号菜单"><span id="account-avatar" class="account-avatar" aria-hidden="true">S</span><span id="account-name" class="account-name"></span></button><div id="account-menu" class="account-menu" hidden><p class="account-menu-mail" id="account-email"></p><p class="account-menu-note">收藏已同步到这个账号。</p><button id="logout" class="account-menu-action" type="button">退出登录</button></div></div></div>
+</div></header>
+<main>
+  <section class="hero">
+    <div class="hero-copy"><div class="eyebrow"><span class="dot"></span> 四座城市，无限可能</div>
+      <h1>下一站，<br>发现你的<span class="hero-accent">新可能。</span></h1>
+      <p>从大湾区到新加坡，找到适合你的工作。<br>汇集大厂官方机会，全岗位覆盖，技术岗优先。</p>
+      <div class="hero-note"><span class="small-check">✓</span> 企业官方来源 <span class="note-divider"></span> 每日更新 <span class="note-divider"></span> 直达官方投递</div>
+    </div>
+    <aside class="daily-card"><div class="daily-top"><span>机会一览</span><span id="edition-date">四城招聘手记</span></div>
+      <div class="daily-number"><strong id="total-count">—</strong><span>个已收录机会</span></div>
+      <div class="daily-stats"><div><strong id="tech-count">—</strong><span>技术相关岗位</span></div><div><strong>4</strong><span>关注城市</span></div><div><strong id="live-count">5</strong><span>同步公司 / 品牌</span></div></div>
+      <div class="daily-bottom"><span class="pulse"></span><span id="last-update">正在读取职位…</span><button id="open-updates" aria-label="查看更新记录"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></button></div>
+    </aside>
+  </section>
+
+  <section class="city-grid" aria-label="按城市筛选">
+    <button class="city-card" data-city="深圳" aria-pressed="false"><div class="city-top"><span class="city-code">01 / SZX</span><span class="city-select" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span></div><div class="city-main"><div><h2>深圳</h2><span>SHENZHEN</span></div><svg viewBox="0 0 135 75" aria-hidden="true"><path d="M5 70h125M15 70V43h14v27M37 70V24l9-17 9 17v46M37 31h18M43 22v48M66 70V39h20v31M70 46h12M70 54h12M96 70V17l9-12 9 12v53M105 16v54M121 70V49h9"/></svg></div><div class="city-bottom"><span>科技创新 · 湾区主场</span><span class="city-count" data-count-city="深圳">—</span></div></button>
+    <button class="city-card" data-city="香港" aria-pressed="false"><div class="city-top"><span class="city-code">02 / HKG</span><span class="city-select" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span></div><div class="city-main"><div><h2>香港</h2><span>HONG KONG</span></div><svg viewBox="0 0 135 75" aria-hidden="true"><path d="M5 70h125M12 70V49h16v21M38 70V22h23v48M38 22l23 25-23 23M38 47l23-25M49 22V6M75 70V15h22v55M80 15V8h12v7M80 24h12M80 33h12M80 42h12M108 70V39h18v31M114 39V30"/></svg></div><div class="city-bottom"><span>国际金融 · 全球连接</span><span class="city-count" data-count-city="香港">—</span></div></button>
+    <button class="city-card" data-city="新加坡" aria-pressed="false"><div class="city-top"><span class="city-code">03 / SIN</span><span class="city-select" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span></div><div class="city-main"><div><h2>新加坡</h2><span>SINGAPORE</span></div><svg viewBox="0 0 135 75" aria-hidden="true"><path d="M5 70h125M31 65V26h12v39M59 65V26h12v39M88 65V26h12v39M23 20q42 13 86-1l-6 9H31zM8 69q7-8 14 0t14 0 14 0 14 0 14 0 14 0 14 0 14 0M118 59V45M110 47q8-15 16 0M112 40q6-11 12 0"/></svg></div><div class="city-bottom"><span>亚太枢纽 · 多元机遇</span><span class="city-count" data-count-city="新加坡">—</span></div></button>
+    <button class="city-card" data-city="广州" aria-pressed="false"><div class="city-top"><span class="city-code">04 / CAN</span><span class="city-select" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span></div><div class="city-main"><div><h2>广州</h2><span>GUANGZHOU</span></div><svg viewBox="0 0 135 75" aria-hidden="true"><path d="M5 70h125M17 70V40h20v30M22 46h10M22 54h10M55 70q16-32 3-51h19q-13 19 3 51zM67 19V3M58 19l22 51M77 19L55 70M60 31h14M62 42h10M59 57h16M94 70V29h19v41M98 29V19h11v10M119 70V49h12"/></svg></div><div class="city-bottom"><span>商业活力 · 数字生活</span><span class="city-count" data-count-city="广州">—</span></div></button>
+  </section>
+
+  <div class="board" id="board">
+    <aside class="filters" aria-label="职位筛选">
+      <div class="filter-heading"><h2>筛选机会</h2><button id="reset" class="text-button">重置</button></div>
+      <label class="filter-label" for="city-select">工作城市</label><select id="city-select"><option value="">全部城市</option><option>深圳</option><option>香港</option><option>新加坡</option><option>广州</option></select>
+      <select id="mobile-company" class="mobile-only" aria-label="筛选公司"><option value="">全部公司</option></select>
+      <div class="filter-label company-label">关注公司 <span>COMPANIES</span></div><div id="company-filters"></div>
+      <label class="filter-label" for="category">岗位方向</label><select id="category"><option value="">全部方向</option><option>AI / 数据</option><option>云计算 / 安全</option><option>研发 / 工程</option><option>产品 / 设计</option><option>销售 / 市场</option><option>金融 / 风控</option><option>运营 / 其他</option></select>
+      <label class="filter-label" for="role-type">招聘类型</label><select id="role-type"><option value="">全部类型</option><option>实习 / 校招</option><option>社招 / 其他</option></select>
+      <div class="filter-foot"><strong>好机会，值得认真对待。</strong><p>在这里发现，去官网确认。<br>岗位要求与开放状态以官网为准。</p></div>
+    </aside>
+    <section class="results" aria-label="职位列表">
+      <div class="results-heading"><div><div class="eyebrow mini" id="section-eyebrow">为你汇集的官方职位</div><h2 id="section-title">发现职位 <span id="result-count"></span></h2></div><button class="text-button source-button" id="source-info"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg>来源与更新</button></div>
+      <div class="search-row"><div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="搜索职位、技能或公司" aria-label="搜索职位、技能或公司"><kbd>/</kbd></div><select id="sort" aria-label="职位排序"><option value="tech">技术岗优先</option><option value="newest">最新发布</option><option value="seen">最近收录</option></select></div>
+      <div class="quick-row"><div role="group" aria-label="职位快捷筛选，单选"><button class="chip active" data-quick="all">全部机会</button><button class="chip" data-quick="new">今日新收录</button><button class="chip" data-quick="tech">只看技术岗</button></div><label class="group-label"><input type="checkbox" id="group-company"> 按公司分组</label></div>
+      <div class="data-note" id="data-note"></div>
+      <div id="results-list" aria-live="polite"><div class="empty">正在整理四城机会…</div></div>
+      <button id="load-more" class="load-more" hidden>加载更多职位</button>
+    </section>
+  </div>
+  <footer><a class="footer-brand" href="#jobs">南向 <span>SOUTHBOUND</span></a><p>四座城市，无限可能。<span>独立招聘信息聚合 · 非企业官方招聘网站</span></p><button class="text-button" id="footer-updates">查看同步记录</button></footer>
+</main>
+<dialog id="detail-dialog" aria-labelledby="detail-title"><div class="detail-toolbar"><span>职位详情</span><button class="dialog-close detail-close" aria-label="关闭职位详情" autofocus><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><div id="detail-content"></div></dialog>
+<dialog id="updates-dialog"><button class="dialog-close" aria-label="关闭"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button><div class="eyebrow">FRESH OPPORTUNITIES, EVERY DAY</div><h2>每日更新，让机会保持新鲜。</h2><p id="schedule-note"></p><div id="source-status"></div><h3 class="history-title">最近同步</h3><div id="history"></div><p class="fine-print">“新收录”指本网站首次发现，并不等于企业当天发布。初次同步作为基线；职位方向根据标题自动分类；招聘类型优先使用官网渠道，缺失时按标题判断。来源失败时保留旧数据；未再检索到不等同于职位关闭。香港、新加坡部分岗位也可能接受其他地点申请。</p></dialog>
+<div id="toast" role="status" hidden></div>
+</body></html>

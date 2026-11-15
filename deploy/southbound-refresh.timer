@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Southbound sync at 09:00 Asia/Shanghai
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Asia/Shanghai
+Persistent=true
+Unit=southbound-refresh.service
+
+[Install]
+WantedBy=timers.target
