@@ -57,19 +57,17 @@ python server.py
 
 所有数据均以企业官网为准。职位方向自动分类基于标题推断；腾讯、阿里的招聘类型使用官网渠道，其余来源主要按标题推断，并非企业权威分类；薪资、签证和工作许可不作推断。高盛、谷歌、Meta、腾讯当前采集字段未提供可确认的发布日期，页面明确显示「未提供」。首次接入的新来源建立基线，不把存量岗位误报成当天新增。没有访问或提交候选人个人信息。
 
-## 部署为公开网站并持续每日更新
+## 代码仓库与持续集成
 
-已附带 `.github/workflows/daily-refresh.yml`，目前未在你的 GitHub 账户创建仓库或启用部署。
+源码托管在 GitHub 私有仓库 <https://github.com/zhenyuduan98/southbound-jobs>，默认分支 `main`。
 
-1. 创建 GitHub 仓库，将**本目录内容**放到仓库根目录（包含 `.github` 隐藏目录），默认分支为 `main`。
-2. 在 Settings → Pages → Build and deployment 中选择 **GitHub Actions**。
-3. 确保仓库允许 Actions 读写内容和部署 Pages。工作流修改职位 JSON、列表快照及 `public/details/` 中的完整 JD 缓存。
-4. 在 Actions 中运行 **Update jobs and publish website**。首次成功后，Pages 会提供公开网址。
-5. 工作流每天 UTC 01:00（UTC+8 09:00）抓取并发布；GitHub 定时任务可能延迟。公开仓库长时间不活动时，GitHub 可能暂停定时任务，需要在 Actions 中重新启用。
+仓库只保存代码、部署模板、官方 Logo、测试与文档。运行时产物不入库，由每日同步在服务器上生成：`data/jobs.json`、`public/snapshot.js`、`public/details/`、`public/translations/`、`accounts.sqlite3`。克隆后先运行 `python collector.py` 建立本地数据。
 
-静态托管的「更新职位」解释如何在 Actions 手动更新。正式服务器通过 Nginx + HTTPS 代理仅监听 127.0.0.1 的 Python 后端，公开页面提供更新记录、禁止访客触发全量同步；管理员通过 SSH 管理。若需要网页管理员登录或多设备收藏，需要进一步增加账号功能。
+`.github/workflows/ci.yml` 在推送和 Pull Request 时运行单元测试，不抓取外部站点、不部署、也不需要任何密钥。
 
-来源异常时，工作流仍发布带状态的旧数据，并将本次运行标记失败以便排查。职位采集无需 API 密钥。官方接口或网页结构改变时，可能需要维护 `collector.py`、`source_adapters.py` 或 `job_details.py`。Meta 使用官网公开访客查询，临时查询令牌每轮重新读取，查询标识变更时会提示失败并保留旧数据。请求遵守来源限流，不绕过登录、验证码或访问限制。
+正式环境是自有服务器：Nginx + HTTPS 反向代理到仅监听 127.0.0.1 的 Python 后端，systemd 定时器每天 09:00（UTC+8）增量同步并备份，公开页面只展示更新记录，访客无法触发全量同步。详见 `部署说明.md`。翻译与 Google 登录凭据只写在服务器的 `/etc/southbound/server.env`，不进仓库。
+
+来源异常时保留上一轮可用数据并在页面标记状态。职位采集无需 API 密钥。官方接口或网页结构改变时，可能需要维护 `collector.py`、`source_adapters.py` 或 `job_details.py`。Meta 使用官网公开访客查询，临时查询令牌每轮重新读取，查询标识变更时会提示失败并保留旧数据。请求遵守来源限流，不绕过登录、验证码或访问限制。
 
 ## 手动采集与验证
 
@@ -78,7 +76,7 @@ python collector.py
 python -m unittest discover -s tests -v
 ```
 
-`data/jobs.json` 保存数据与历史；`public/snapshot.js` 是可独立托管的同一数据快照。采集带有线程锁和操作系统文件锁，避免多次刷新同时覆盖。收藏保存在浏览器 localStorage，不上传服务器，也不会在设备间同步。
+`data/jobs.json` 保存数据与历史；`public/snapshot.js` 是可独立托管的同一数据快照。采集带有线程锁和操作系统文件锁，避免多次刷新同时覆盖。未登录时收藏保存在浏览器 localStorage；使用 Google 账号登录后收藏存入服务器账号库并跨设备同步，首次登录按并集合并，不覆盖已有收藏。
 
 ## 文件
 
@@ -91,7 +89,7 @@ python -m unittest discover -s tests -v
 - `jd_translation.py`：AI 翻译、逐段格式校验、异步队列和按原文内容缓存。
 - `public/translations/`：已生成的中文译文，可随静态网站部署，不包含服务密钥。
 - `public/details/`：逐职位的完整 JD；静态托管同样可以在弹窗阅读。
-- `.github/workflows/daily-refresh.yml`：云端每日采集与 Pages 部署。
+- `.github/workflows/ci.yml`：推送与 Pull Request 时运行单元测试。
 - `tests/`：数据完整性与失败保护测试。
 
 参考文章：<https://mp.weixin.qq.com/s/b6hj6_JT1K6J68GjOairjQ>。仅参考组织形式，未复制原文职位数据或视觉资产。
