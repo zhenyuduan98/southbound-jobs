@@ -4,6 +4,16 @@
 
 深圳、香港、新加坡、广州招聘信息网站。参考「每日技术岗速递」的每日汇总和公司分组方式，采用 Google Material Design 风格的原创网站界面。全岗位覆盖，默认技术岗优先。数据来自实际访问的企业招聘官网，没有演示职位。
 
+## 界面
+
+![首页与四城机会](docs/screenshot-home.png)
+
+点击职位标题在页内弹窗阅读完整 JD，英文职位下方附段落对齐的 AI 中文翻译：
+
+![职位详情弹窗](docs/screenshot-detail.png)
+
+<img src="docs/screenshot-mobile.png" alt="手机端首页" width="320">
+
 ## 本地打开
 
 需要 Python 3.10 或更新版本，不需要安装第三方依赖。在本目录运行：
@@ -133,3 +143,7 @@ python -m unittest discover -s tests -v
 - 账号数据存放于 `accounts.sqlite3`（服务器上位于 `SOUTHBOUND_DATA_ROOT`，随数据目录一起备份），表结构为 users / sessions / favorites，会话只保存 token 的 sha256。
 - 相关代码在 `accounts.py`，路由为 `/api/me`、`/auth/google/start`、`/auth/google/callback`、`/api/auth/logout`、`/api/favorites`。
 - 需要的环境变量：`SOUTHBOUND_GOOGLE_CLIENT_ID`、`SOUTHBOUND_GOOGLE_CLIENT_SECRET`、`SOUTHBOUND_PUBLIC_ORIGIN`。未配置时登录按钮自动隐藏，其余功能不受影响。
+
+## 许可
+
+代码以 MIT 许可发布，见 [LICENSE](LICENSE)。职位内容、公司名称与 Logo 的权利归各企业所有，本项目仅做聚合展示并链接回官方申请页面。
